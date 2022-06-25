@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Hub</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam&family=Roboto+Mono:wght@300&display=swap"
+      rel="stylesheet">
+  </head>
+  <body class="main-content">
+    <header class="section sec1 header active">
+      01 : Home
+    </header>
+
+    <div class="hero-full-container background-image-container white-text-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="hero-full-wrapper">
+              <div class="text-content">
+                <h1>Hello,<br>
+                  <span id="intro">
+                  </span>
+                </h1>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <main>
+      <section class="section sec2 about">02 : About me</section>
+      <section class="section sec3 portfolio">03 : Projects</section>
+      <section class="section sec4 blogs">04 : Technologies</section>
+      <section class="section sec5 contact">05 : Contact</section>
+    </main>
+
+
+    <div class="controls">
+      <div class="control control-1 active-btn">
+        <i class="fa-solid fa-house-user"></i>
+      </div>
+      <div class="control control-2 ">
+        <i class="fa-solid fa-user-astronaut"></i>
+      </div>
+      <div class="control control-3 ">
+        <i class="fa-solid fa-briefcase "></i>
+      </div>
+      <div class="control control-4 ">
+        <i class="fa-solid fa-keyboard"></i>
+      </div>
+      <div class="control control-5 ">
+        <i class="fa-solid fa-calendar-days"></i>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        type();
+        movingBackgroundImage();
+      });
+    </script>
+
+    <script src="typed.js"></script>
+    <script type="text/javascript" src="main-min.js"></script>
+    <script>
+      var intro = new Typed('#intro', {
+        strings: [
+          'Hello',
+          "I'm Crickett",
+          'I am a',
+          'Front-End',
+          'Developer'
+        ],
+        typeSpeed: 60,
+        backSpeed: 30,
+        loop: !0,
+        loopCount: 1 / 0,
+      });
+    </script>
+
+  </body>
+</html>
+
+
+<!-- <div>
+    <form>
+      <input type="text" />
+      <button>Submit</button>
+
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Time-Zone</th>
+        </tr>
+      </table>
+
+    </form>
+  </div> -->
