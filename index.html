@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recruiter Hub</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="scss/scss/styles.scss">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
       integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,7 +20,7 @@
       01 : Home
     </header>
 
-    <div class="hero-full-container background-image-container white-text-container">
+    <div class="hero-full-container background-image-container white-text-container typed-content">
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
@@ -46,6 +47,7 @@
       <section class="section sec5 contact">05 : Contact</section>
     </main>
 
+    <!-- we only want the first div to contain the 'active' button  -->
 
     <div class="controls">
       <div class="control control-1 active-btn">
@@ -64,16 +66,19 @@
         <i class="fa-solid fa-calendar-days"></i>
       </div>
     </div>
-    <script>
+
+
+    <!-- <script>
       document.addEventListener("DOMContentLoaded", function (event) {
         type();
         movingBackgroundImage();
       });
-    </script>
+    </script> -->
 
-    <script src="typed.js"></script>
-    <script type="text/javascript" src="main-min.js"></script>
-    <script>
+    <script src="app.js"></script>
+    <!-- <script src="typed.js"></script>
+    <script type="text/javascript" src="main-min.js"></script> -->
+    <!-- <script>
       var intro = new Typed('#intro', {
         strings: [
           'Hello',
@@ -87,7 +92,7 @@
         loop: !0,
         loopCount: 1 / 0,
       });
-    </script>
+    </script> -->
 
   </body>
 </html>
