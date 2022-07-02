@@ -2,13 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  list-style: none;
-}
+  list-style: none; }
 
 /* using CSS variables  */
 :root {
   --color-primary: #191d2b;
-  --color-secondary: #94f0ba74;
+  --color-secondary: #27ae60;
   --color-white: #ffffff;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -19,8 +18,7 @@
   --color-grey-5: #222e35;
   --color-grey-6: #12181b;
   --br-sm-2: 14px;
-  --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
-}
+  --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3); }
 
 /* make stars twinkle */
 body {
@@ -29,12 +27,10 @@ body {
   font-size: 1.1rem;
   font-family: "Roboto Mono", monospace;
   color: var(--color-white);
-  transition: all 0.4s ease-in-out;
-}
+  transition: all 0.4s ease-in-out; }
 
 .typed-content {
-  align-items: center;
-}
+  align-items: center; }
 
 /* table,
 th,
@@ -45,14 +41,12 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  font-family: inherit;
-}
+  font-family: inherit; }
 
 header {
   height: 100vh;
   color: var(--color-white);
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 /* all sections sit on top of eachother with the absolute positioning 
 we will use javascript to hide and show to give the illusion of changing 
@@ -63,15 +57,13 @@ section {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 3rem 18rem;
-}
+  padding: 3rem 18rem; }
 
 /* this is by default off-screen with the Y-axis and a negative number  */
-.section {
+.sections {
   transform: translateY(-100%) scale(0);
   transition: all 0.4s ease-in-out;
-  background-color: var(--color-primary);
-}
+  background-color: var(--color-primary); }
 
 /* 
 each individual section 1 - 5 has a different background color but we set the display to none in order
@@ -79,32 +71,37 @@ to 'switch' between the sections  */
 .sec1 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: aliceblue;
-}
+  background-image: url(../img/space.png); }
 
 .sec2 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #ffffff;
-}
+  background: linear-gradient(5deg, #036564, #033649); }
 
 .sec3 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #f8f8f8;
-}
+  background: linear-gradient(5deg, #556270, #c44d58, #036564); }
 
 .sec4 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #dbe1e8;
-}
+  background: linear-gradient(5deg, #93b4ac, #fa715f, #556270); }
 
 .sec5 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #b2becd;
-}
+  background: linear-gradient(5deg, #e5fdc9, #d4fee6, #85c9c8, #93b4ac); }
+
+.active {
+  display: block;
+  animation: scaleAnim 1s ease-in-out; }
+
+@keyframes scaleAnim {
+  0% {
+    transform: translateY(-100%) scale(0); }
+  100% {
+    transform: translateY(0) scale(1); } }
 
 /* Controls */
 /* we give it the position of fixed on the parent container  */
@@ -117,30 +114,25 @@ to 'switch' between the sections  */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: translateY(-50%);
-}
-.controls .active-btn {
-  background-color: var(--color-secondary) !important;
-  transition: all 0.4 ease-in-out;
-}
-.controls .active-btn i {
-  color: var(--color-white) !important;
-}
-.controls .control {
-  padding: 1rem;
-  cursor: pointer;
-  background-color: var(--color-grey-4);
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.7rem 0;
-  box-shadow: var(--box-shadow-1);
-}
-.controls .control i {
-  font-size: 1.2rem;
-  color: var(--color-grey-2);
-  pointer-events: none;
-}
+  transform: translateY(-50%); }
+  .controls .active-btn {
+    background-color: var(--color-secondary) !important;
+    transition: all 0.4 ease-in-out; }
+    .controls .active-btn i {
+      color: var(--color-white) !important; }
+  .controls .control {
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--color-grey-4);
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.7rem 0;
+    box-shadow: var(--box-shadow-1); }
+    .controls .control i {
+      font-size: 1.2rem;
+      color: var(--color-grey-2);
+      pointer-events: none; }

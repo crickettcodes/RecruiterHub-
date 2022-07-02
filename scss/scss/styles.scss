@@ -71,7 +71,7 @@ section {
 
 /* this is by default off-screen with the Y-axis and a negative number  */
 
-.section {
+.sections {
   transform: translateY(-100%) scale(0);
   transition: all 0.4s ease-in-out;
   background-color: var(--color-primary);
@@ -84,31 +84,44 @@ to 'switch' between the sections  */
 .sec1 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: aliceblue;
+  background-image: url(../img/space.png);
 }
 
 .sec2 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #ffffff;
+  background: linear-gradient(5deg, #036564, #033649);
 }
 
 .sec3 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #f8f8f8;
+  background: linear-gradient(5deg, #556270, #c44d58, #036564);
 }
 
 .sec4 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #dbe1e8;
+  background: linear-gradient(5deg, #93b4ac, #fa715f, #556270);
 }
 
 .sec5 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #b2becd;
+  background: linear-gradient(5deg, #e5fdc9, #d4fee6, #85c9c8, #93b4ac);
+}
+
+.active {
+  display: block;
+  animation: scaleAnim 1s ease-in-out;
+  @keyframes scaleAnim {
+    0% {
+      transform: translateY(-100%) scale(0);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
 }
 
 /* Controls */
