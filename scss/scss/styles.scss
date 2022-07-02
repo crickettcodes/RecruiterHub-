@@ -9,7 +9,7 @@
 
 :root {
   --color-primary: #191d2b;
-  --color-secondary: #27ae60;
+  --color-secondary: #85eaaf8d;
   --color-white: #ffffff;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -25,7 +25,7 @@
 
 /* make stars twinkle */
 body {
-  background-image: url(../img/space.png);
+  // background-image: url(../img/space.png);
   background-color: var(--color-primary);
   font-size: 1.1rem;
   font-family: "Roboto Mono", monospace;
@@ -33,9 +33,13 @@ body {
   transition: all 0.4s ease-in-out;
 }
 
-.typed-content {
-  align-items: center;
-}
+// #greeting {
+//   align-items: center;
+//   background-image: url(../img/space.png);
+//   background-color: var(--color-primary);
+//   font-size: 1.1rem;
+//   font-family: "Roboto Mono", monospace;
+// }
 
 /* table,
 th,
@@ -54,6 +58,13 @@ header {
   height: 100vh;
   color: var(--color-white);
   overflow: hidden;
+}
+
+.bike-image {
+  display: inline-block;
+  z-index: -1;
+  vertical-align: top;
+  position: relative;
 }
 
 /* all sections sit on top of eachother with the absolute positioning 
@@ -84,44 +95,45 @@ to 'switch' between the sections  */
 .sec1 {
   display: none;
   transform: translateY(0) scale(1);
-  background-image: url(../img/space.png);
+  background: linear-gradient(5deg, #070808, #000f15, #033649, #064962);
 }
 
 .sec2 {
   display: none;
   transform: translateY(0) scale(1);
-  background: linear-gradient(5deg, #036564, #033649);
+  background: linear-gradient(5deg, #033649, #036564);
 }
 
 .sec3 {
   display: none;
   transform: translateY(0) scale(1);
-  background: linear-gradient(5deg, #556270, #c44d58, #036564);
+  background: linear-gradient(5deg, #036564, #c44d58, #556270);
 }
 
 .sec4 {
   display: none;
   transform: translateY(0) scale(1);
-  background: linear-gradient(5deg, #93b4ac, #fa715f, #556270);
+  background: linear-gradient(5deg, #556270, #fa715f, #93b4ac);
 }
 
 .sec5 {
   display: none;
   transform: translateY(0) scale(1);
-  background: linear-gradient(5deg, #e5fdc9, #d4fee6, #85c9c8, #93b4ac);
+  background: linear-gradient(5deg, #93b4ac, #85c9c8, #d4fee6, #e5fdc9);
 }
 
 .active {
   display: block;
-  animation: scaleAnim 1s ease-in-out;
-  @keyframes scaleAnim {
-    0% {
-      transform: translateY(-100%) scale(0);
-    }
-    100% {
-      transform: translateY(0) scale(1);
-    }
-  }
+  // animation: scaleAnim 2s ease-in-out;
+
+  // @keyframes scaleAnim {
+  //   0% {
+  //     transform: translateY(0) scaleY(1);
+  //   }
+  //   100% {
+  //     transform: translateY(-100%) scaleY(0);
+  //   }
+  // }
 }
 
 /* Controls */
@@ -164,3 +176,29 @@ to 'switch' between the sections  */
     }
   }
 }
+
+// Header Content
+
+.header-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+  .left-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    .h-shape {
+      transition: all 0.4s ease-in-out;
+      width: 65%;
+      height: 100%;
+      background: linear-gradient(5deg, #036564, #033649);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%);
+    }
+  }
+}
+
+//Independent Components
