@@ -23,30 +23,13 @@
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* make stars twinkle */
 body {
-  // background-image: url(../img/space.png);
-  // background-color: var(--color-primary);
-  font-size: 1.1rem;
-
+  background: linear-gradient(5deg, #070808, #000f15, #033649, #064962);
+  font-size: 1.2rem;
   font-family: "Roboto Mono", monospace;
-  // color: var(--color-white);
+  color: var(--color-white);
   transition: all 0.4s ease-in-out;
 }
-
-// #greeting {
-//   align-items: center;
-//   background-image: url(../img/space.png);
-//   background-color: var(--color-primary);
-//   font-size: 1.1rem;
-//   font-family: "Roboto Mono", monospace;
-// }
-
-/* table,
-th,
-td {
-  border: 1px solid var(--color-white);
-} */
 
 a {
   display: inline-block;
@@ -59,6 +42,8 @@ header {
   height: 100vh;
   color: var(--color-white);
   overflow: visible;
+  //should be changed to hidden
+  padding: 0 !important;
 }
 
 /* all sections sit on top of eachother with the absolute positioning 
@@ -74,17 +59,46 @@ section {
   padding: 3rem 18rem;
 }
 
-/* this is by default off-screen with the Y-axis and a negative number  */
+// container
+//active
 
-.sections {
-  transform: translateY(-100%) scale(0);
-  transition: all 0.4s ease-in-out;
-  background-color: var(--color-primary);
+.controls {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+
+  .control {
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--color-grey-4);
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.7rem 0;
+    box-shadow: var(--box-shadow-1);
+    i {
+      font-size: 1.2rem;
+      color: var(--color-grey-2);
+      pointer-events: none;
+    }
+  }
+  .active-btn {
+    background-color: var(--color-secondary) !important;
+    transition: all 0.4 ease-in-out;
+    i {
+      color: var(--color-white) !important;
+    }
+  }
 }
-
-/* 
-each individual section 1 - 5 has a different background color but we set the display to none in order
-to 'switch' between the sections  */
 
 .sec1 {
   display: none;
@@ -134,56 +148,19 @@ to 'switch' between the sections  */
 
 /* we give it the position of fixed on the parent container  */
 
-.controls {
-  position: fixed;
-  z-index: 10;
-  top: 50%;
-  right: 3%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-50%);
-  .active-btn {
-    background-color: var(--color-secondary) !important;
-    transition: all 0.4 ease-in-out;
-    i {
-      color: var(--color-white) !important;
-    }
-  }
-  .control {
-    padding: 1rem;
-    cursor: pointer;
-    background-color: var(--color-grey-4);
-    height: 55px;
-    width: 55px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.7rem 0;
-    box-shadow: var(--box-shadow-1);
-    i {
-      font-size: 1.2rem;
-      color: var(--color-grey-2);
-      pointer-events: none;
-    }
-  }
-}
-
 // Header Content
 
 .header-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 100%;
+  min-height: 100vh;
   .left-header {
     display: flex;
     align-items: center;
     position: relative;
     .h-shape {
       transition: all 0.4s ease-in-out;
-      width: 65%;
+      width: 75%;
       height: 100%;
       background: linear-gradient(5deg, #036564, #033649);
       position: absolute;
@@ -194,29 +171,22 @@ to 'switch' between the sections  */
     }
     .image {
       border-radius: var(--br-sm-2);
-      height: 87%;
-      width: 58;
+      height: 85%;
+      width: 60%;
       margin-left: 4rem;
+      object-fit: cover;
+      background-image: url(../img/space.png);
       transition: all 0.42 ease-in-out;
 
       img {
-        width: 100%;
+        width: 105%;
         height: 100%;
         clip-path: polygon(50% 13%, 100% 50%, 51% 100%, 0% 50%);
-        background-image: url(../img/space.png);
-      }
-      object-fit: cover;
-      transition: all 0.4s ease-in-out;
-      background-image: url(../img/space.png);
-      filter: grayscale(100%);
-      &:hover {
-        filter: grayscale(0%);
-
-        .bike-image {
-          display: inline-block;
-          z-index: -1;
-          vertical-align: top;
-          position: relative;
+        object-fit: cover;
+        transition: all 0.4s ease-in-out;
+        filter: grayscale(100%);
+        &:hover {
+          filter: grayscale(0%);
         }
       }
     }
@@ -250,6 +220,49 @@ to 'switch' between the sections  */
   color: inherit;
   font-weight: 600;
   position: relative;
+  border: 1px solid #fa715f;
+  display: flex;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  .btn-text {
+    padding: 0 2rem;
+    color: white;
+  }
+  .btn-icon {
+    color: white;
+    background-color: #fa715f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 1rem;
+  }
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: all 0.4 ease-out;
+    z-index: -1;
+  }
+  &:hover {
+    &::before {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      transform: translateX(0);
+    }
+  }
+}
+.cal-btn {
+  border-radius: 10px;
+  color: inherit;
+  font-weight: 600;
+  position: absolute;
   border: 1px solid #fa715f;
   display: flex;
   align-self: flex-start;
