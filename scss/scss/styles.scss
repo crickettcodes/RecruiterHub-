@@ -26,10 +26,11 @@
 /* make stars twinkle */
 body {
   // background-image: url(../img/space.png);
-  background-color: var(--color-primary);
+  // background-color: var(--color-primary);
   font-size: 1.1rem;
+
   font-family: "Roboto Mono", monospace;
-  color: var(--color-white);
+  // color: var(--color-white);
   transition: all 0.4s ease-in-out;
 }
 
@@ -57,14 +58,7 @@ a {
 header {
   height: 100vh;
   color: var(--color-white);
-  overflow: hidden;
-}
-
-.bike-image {
-  display: inline-block;
-  z-index: -1;
-  vertical-align: top;
-  position: relative;
+  overflow: visible;
 }
 
 /* all sections sit on top of eachother with the absolute positioning 
@@ -198,7 +192,99 @@ to 'switch' between the sections  */
       z-index: -1;
       clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%);
     }
+    .image {
+      border-radius: var(--br-sm-2);
+      height: 87%;
+      width: 58;
+      margin-left: 4rem;
+      transition: all 0.42 ease-in-out;
+
+      img {
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 13%, 100% 50%, 51% 100%, 0% 50%);
+        background-image: url(../img/space.png);
+      }
+      object-fit: cover;
+      transition: all 0.4s ease-in-out;
+      background-image: url(../img/space.png);
+      filter: grayscale(100%);
+      &:hover {
+        filter: grayscale(0%);
+
+        .bike-image {
+          display: inline-block;
+          z-index: -1;
+          vertical-align: top;
+          position: relative;
+        }
+      }
+    }
+  }
+  .right-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10rem;
+    padding-left: 10rem;
+    .name {
+      font-size: 2rem;
+    }
+    span {
+      color: #036564;
+    }
+    p {
+      margin: 1.5rem 0;
+      line-height: 2rem;
+    }
   }
 }
 
 //Independent Components
+.btn-con {
+  display: flex;
+  align-self: flex-start;
+}
+.main-btn {
+  border-radius: 30px;
+  color: inherit;
+  font-weight: 600;
+  position: relative;
+  border: 1px solid #fa715f;
+  display: flex;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  .btn-text {
+    padding: 0 2rem;
+    color: white;
+  }
+  .btn-icon {
+    color: white;
+    background-color: #fa715f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 1rem;
+  }
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: all 0.4 ease-out;
+    z-index: -1;
+  }
+  &:hover {
+    &::before {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      transform: translateX(0);
+    }
+  }
+}
