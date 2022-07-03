@@ -158,16 +158,20 @@ section {
     display: flex;
     align-items: center;
     position: relative;
+    // box-shadow: inset 0 0 10px #311b0b;
     .h-shape {
       transition: all 0.4s ease-in-out;
-      width: 75%;
+      width: 100%;
       height: 100%;
       background: linear-gradient(5deg, #036564, #033649);
       position: absolute;
       left: 0;
       top: 0;
       z-index: -1;
-      clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%);
+      box-shadow: inset 0 0 10px #311b0b;
+      clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+
+      // clip-path: polygon(100%, 0, 46% 0, 90% 100%, 30%, 100%);
     }
     .image {
       border-radius: var(--br-sm-2);
@@ -175,8 +179,10 @@ section {
       width: 60%;
       margin-left: 4rem;
       object-fit: cover;
+      box-shadow: inset 0 0 10px #311b0b;
       background-image: url(../img/space.png);
       transition: all 0.42 ease-in-out;
+      box-shadow: inset 0 0 10px #311b0b;
 
       img {
         width: 105%;
@@ -184,6 +190,7 @@ section {
         clip-path: polygon(50% 13%, 100% 50%, 51% 100%, 0% 50%);
         object-fit: cover;
         transition: all 0.4s ease-in-out;
+        box-shadow: inset 0 0 10px #311b0b;
         filter: grayscale(100%);
         &:hover {
           filter: grayscale(0%);
@@ -192,6 +199,7 @@ section {
     }
   }
   .right-header {
+    // box-shadow: inset 0 0 10px #311b0b;
     display: flex;
     flex-direction: column;
     justify-content: center;
