@@ -122,28 +122,34 @@ section {
     position: relative; }
     .header-content .left-header .h-shape {
       transition: all 0.4s ease-in-out;
-      width: 75%;
+      width: 105%;
       height: 100%;
       background: linear-gradient(5deg, #036564, #033649);
       position: absolute;
       left: 0;
       top: 0;
       z-index: -1;
-      clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%); }
+      box-shadow: inset 0 0 10px #311b0b;
+      clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%); }
     .header-content .left-header .image {
       border-radius: var(--br-sm-2);
-      height: 85%;
-      width: 60%;
-      margin-left: 4rem;
+      height: 95%;
+      width: 65%;
+      margin-left: 6rem;
       object-fit: cover;
+      box-shadow: inset 0 0 10px #311b0b;
       background-image: url(../img/space.png);
-      transition: all 0.42 ease-in-out; }
+      transition: all 0.42 ease-in-out;
+      box-shadow: inset 0 0 10px #311b0b; }
       .header-content .left-header .image img {
-        width: 105%;
-        height: 100%;
+        width: 106%;
+        height: 92%;
+        margin-top: 2rem;
+        margin-right: 3rem;
         clip-path: polygon(50% 13%, 100% 50%, 51% 100%, 0% 50%);
         object-fit: cover;
         transition: all 0.4s ease-in-out;
+        box-shadow: inset 0 0 10px #311b0b;
         filter: grayscale(100%); }
         .header-content .left-header .image img:hover {
           filter: grayscale(0%); }
@@ -173,15 +179,13 @@ section {
   border: 1px solid #fa715f;
   display: flex;
   align-self: flex-start;
-  display: flex;
   align-items: center;
   overflow: hidden; }
   .main-btn .btn-text {
-    padding: 0 2rem;
-    color: white; }
+    padding: 0 2rem; }
   .main-btn .btn-icon {
     color: white;
-    background-color: #fa715f;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,11 +199,14 @@ section {
     transform: translateX(100%);
     transition: all 0.4 ease-out;
     z-index: -1; }
-  .main-btn:hover::before {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    transform: translateX(0); }
+  .main-btn:hover {
+    transition: all 0.4 ease-out; }
+    .main-btn:hover::before {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      transform: translateX(0);
+      transition: all 0.4s ease-out; }
 
 .cal-btn {
   border-radius: 10px;
@@ -236,3 +243,240 @@ section {
     height: 100%;
     background-color: white;
     transform: translateX(0); }
+
+.main-title {
+  text-align: center; }
+  .main-title h4 {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 300; }
+    .main-title h4 span {
+      color: #fa715f; }
+    .main-title h4 .bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: #fa715f;
+      transition: all 0.4s ease-in-out;
+      z-index: -1;
+      transform: translateY(-50%, -50%);
+      font-weight: 800;
+      font-size: 3rem; }
+
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 3.5rem;
+  padding-bottom: 5rem; }
+  .about-container .right-about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; }
+    .about-container .right-about .about-item {
+      border: 1px solid white;
+      border-radius: 5px;
+      transition: all 0.4s ease-in-out;
+      box-shadow: 1px 2px 15px var(--color-grey-5); }
+      .about-container .right-about .about-item:hover {
+        cursor: default;
+        transform: translateY(-5px);
+        border: 1px solid var(--color-grey-6);
+        box-shadow: inset 0 0 10px #311b0b; }
+      .about-container .right-about .about-item .abt-text {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column; }
+        .about-container .right-about .about-item .abt-text .large-text {
+          font-size: 3rem;
+          font-weight: 700;
+          color: #85c9c8; }
+        .about-container .right-about .about-item .abt-text .small-text {
+          padding-left: 3rem;
+          position: relative;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          color: grey;
+          letter-spacing: 2px; }
+          .about-container .right-about .about-item .abt-text .small-text::before {
+            position: absolute;
+            top: 15px;
+            width: 2rem;
+            height: 2px;
+            background-color: var(--color-grey-6); }
+  .about-container .left-about {
+    padding: 5rem; }
+    .about-container .left-about p {
+      line-height: 2rem;
+      padding: 1rem;
+      color: var(--color-grey-5); }
+    .about-container .left-about h4 {
+      font-size: 2rem;
+      text-transform: uppercase; }
+
+.about-stats {
+  padding-bottom: 4rem; }
+  .about-stats .progress-bars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid: 2rem; }
+    .about-stats .progress-bars .progress-bar {
+      display: flex;
+      flex-direction: column; }
+      .about-stats .progress-bars .progress-bar .prog-title {
+        text-transform: uppercase;
+        font-weight: 500; }
+      .about-stats .progress-bars .progress-bar .progress-con {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem; }
+        .about-stats .progress-bars .progress-bar .progress-con .prog-text {
+          color: var(--color-grey-4); }
+        .about-stats .progress-bars .progress-bar .progress-con .progress {
+          width: 100%;
+          height: 0.48rem;
+          background-color: var(--color-grey-3);
+          margin: 1rem;
+          position: relative; }
+          .about-stats .progress-bars .progress-bar .progress-con .progress span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #d4fee6;
+            transition: all 0.4s ease-in-out; }
+          .about-stats .progress-bars .progress-bar .progress-con .progress .html {
+            width: 98%; }
+          .about-stats .progress-bars .progress-bar .progress-con .progress .css3 {
+            width: 90%; }
+          .about-stats .progress-bars .progress-bar .progress-con .progress .js {
+            width: 95%; }
+          .about-stats .progress-bars .progress-bar .progress-con .progress .react {
+            width: 70%; }
+          .about-stats .progress-bars .progress-bar .progress-con .progress .node {
+            width: 85%; }
+          .about-stats .progress-bars .progress-bar .progress-con .progress .java {
+            width: 60%; }
+
+.stat-title {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 3.5rem 0;
+  position: relative; }
+  .stat-title ::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 40%;
+    height: 1px;
+    background-color: #e5fdc9;
+    transform: translateX(-50%); }
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid: 2rem;
+  padding-bottom: 3rem; }
+  .timeline .timeline-item {
+    position: relative;
+    padding-left: 3rem;
+    border-left: 1px solid rgba(252, 247, 247, 0.102); }
+    .timeline .timeline-item .tl-icon {
+      position: absolute;
+      left: -3.5%;
+      top: 0;
+      background-color: #036564;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .timeline .timeline-item .tl-icon i {
+        font-size: 1.3rem; }
+    .timeline .timeline-item .tl-duration {
+      padding: 0.2rem 0.6rem;
+      background-color: #85c9c8;
+      border-radius: 15px;
+      display: inline-block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 500; }
+    .timeline .timeline-item h5 {
+      padding: 1rem 0;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      font-weight: 600; }
+      .timeline .timeline-item h5 span {
+        color: var(--color-grey-2);
+        font-weight: 500;
+        font-size: 1.2rem; }
+    .timeline .timeline-item .tl-text {
+      color: whitesmoke;
+      padding-bottom: 0.5rem; }
+
+.port-text {
+  padding: 2rem 0;
+  text-align: center; }
+
+.portfolios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid: 2rem;
+  margin-top: 3rem; }
+  .portfolios .portfolio-item {
+    position: relative;
+    border-radius: 15px; }
+    .portfolios .portfolio-item img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 15px; }
+    .portfolios .portfolio-item .hover-items {
+      width: 100%;
+      height: 100%;
+      background-color: #eacfcf;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.4s ease-in-out; }
+      .portfolios .portfolio-item .hover-items h3 {
+        font-size: 1rem;
+        color: #036564;
+        margin-bottom: 1.5rem; }
+      .portfolios .portfolio-item .hover-items .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .portfolios .portfolio-item .hover-items .icons .icon {
+          background-color: whitesmoke;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 1rem;
+          cursor: pointer;
+          transition: all 0.4s ease-in-out; }
+          .portfolios .portfolio-item .hover-items .icons .icon i {
+            font-size: 1.5rem;
+            color: #d0b3f5;
+            margin: 0 1rem; }
+          .portfolios .portfolio-item .hover-items .icons .icon:hover {
+            background-color: #13a3a1; }
+            .portfolios .portfolio-item .hover-items .icons .icon:hover i {
+              color: white; }
+
+.portfolio-item:hover .hover-items {
+  opacity: 1;
+  transform: scale(1); }
